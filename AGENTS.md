@@ -1,6 +1,6 @@
 # AGENTS.md for Mother's IT Helper
 
-Owner dashboard for a family phone-based tech helper. `context/Source/` is the untouched Sauna snapshot. The runnable local app lives at the repo root.
+Owner dashboard for a family phone-based tech helper. `context/saunce-source/` is the untouched Sauna snapshot (legacy reference only — not imported). The runnable local app lives at the repo root.
 
 ## Directory structure
 
@@ -15,7 +15,8 @@ Owner dashboard for a family phone-based tech helper. `context/Source/` is the u
 ├── data/app.sqlite           # local DB (gitignored)
 ├── data/runtime.json         # bound local URL + pid while the server is up (gitignored)
 
-├── context/Source/           # original Sauna package — do not edit
+├── context/                  # legacy reference only — not imported at runtime
+│   └── saunce-source/        # original Sauna package — do not edit
 │   ├── app.md
 │   ├── src/{handler,client,db,schema}.ts
 │   └── migrations/

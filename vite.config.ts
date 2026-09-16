@@ -10,6 +10,9 @@ export default defineConfig({
   },
   server: {
     middlewareMode: true,
+    watch: {
+      ignored: ["**/context/**", "**/playwright-report/**", "**/test-results/**", "**/data/**"],
+    },
   },
   appType: "custom",
 });
