@@ -1,0 +1,80 @@
+# Local development for Mother's Little Helper
+# Binds 127.0.0.1. PORT unset = OS-assigned free port. `just live` injects PUBLIC_BASE_URL.
+
+set dotenv-load := false
+set positional-arguments := true
+
+# Install JS dependencies (and Playwright's Chromium once).
+install:
+    npm install
+    npx playwright install chromium
+
+# Run the dashboard locally (writes data/runtime.json with the bound URL).
+dev *args:
+    npm run dev -- {{args}}
+
+# Dashboard + Cloudflare quick tunnel. PUBLIC_BASE_URL is set for this process only.
+# Pass --yes to skip the cloudflared install prompt.
+live *args:
+    npm run live -- {{args}}
+
+# Print the running dashboard URL (from data/runtime.json).
+url:
+    npx tsx scripts/app-url.ts
+
+# Print the process PUBLIC_BASE_URL if `just live` (or an env override) set one.
+url-public:
+    npx tsx scripts/app-url.ts public
+
+# Typecheck + unit/API/stress tests (mocked externals).
+test:
+    npx tsc --noEmit
+    npm test
+
+# HTTP/API stress cases only.
+test-stress:
+    npm run test:stress
+
+# Playwright e2e + screenshot baselines (mocked externals).
+test-e2e:
+    npm run test:e2e
+
+# Visual regression screenshots only.
+test-visual:
+    npm run test:visual
+
+# Screenshots + axe + optional LLM visual notes.
+audit-ui:
+    npm run audit:ui
+
+# Live smoke against real ElevenLabs (lists voices). Skips if no key.
+test-live:
+    npm run test:live
+
+# Production build of the Vite client.
+build:
+    npm run build
+
+# Serve the production build.
+start:
+    npm run start
+
+# Send any pending SMS surveys once (against the running dashboard).
+survey-once:
+    npx tsx scripts/survey-once.ts
+
+# List ElevenLabs voices.
+voices-list:
+    npm run voices -- list
+
+# Instant-clone a voice: just voices-clone "Name" sample1.wav [sample2.wav ...]
+voices-clone name +files:
+    npm run voices -- clone {{name}} {{files}}
+
+# Design voice previews from a description.
+voices-design description:
+    npm run voices -- design {{description}}
+
+# Save a designed preview: just voices-save generated_voice_id "Name" ["description"]
+voices-save generated_id name *description:
+    npm run voices -- save {{generated_id}} {{name}} {{description}}

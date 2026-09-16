@@ -1,0 +1,44 @@
+{
+  "name": "mothers-it-helper",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx scripts/dev.ts",
+    "live": "tsx scripts/dev.ts --live",
+    "build": "vite build",
+    "start": "NODE_ENV=production tsx src/server/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:stress": "vitest run tests/stress",
+    "test:e2e": "playwright test",
+    "test:visual": "playwright test tests/e2e/visual.spec.ts",
+    "audit:ui": "playwright test tests/e2e/visual.spec.ts --reporter=line && tsx scripts/audit-ui.ts",
+    "test:live": "tsx scripts/test-live.ts",
+    "voices": "tsx scripts/voices.ts"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "^2.0.42",
+    "@hono/node-server": "^1.19.0",
+    "ai": "^5.0.59",
+    "better-sqlite3": "^12.2.0",
+    "dotenv": "^16.6.1",
+    "drizzle-orm": "^0.44.5",
+    "hono": "^4.9.8",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "@playwright/test": "^1.55.0",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^24.5.2",
+    "@types/react": "^18.3.24",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^5.0.2",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.5",
+    "vitest": "^3.2.4"
+  }
+}
