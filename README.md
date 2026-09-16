@@ -1,8 +1,16 @@
-# Mothers-IT-Helper
+# Mother's IT Helper
 
-Owner dashboard for a family tech-support phone line (ElevenLabs Conversational AI + Twilio). This repo root is the local app.
+Owner dashboard for an agentic family tech-support line (powered by ElevenLabs Conversational AI + Twilio), and prize-winning entry in the July 2026 [ElevenLabs x Sauna Hack Night](https://hackersquad.io/builders/dashboard/events/cmrjm6v0v000qn20kyk2j3yfv/builder#tools), hosted by [HackerSquad.io](https://hackersquad.io)
 
-## Run
+As described in their writeup for the Builders Collective Newsletter (lightly edited by me):
+
+```markdown
+Every family has that one person who becomes free tech support the moment something goes wrong — for Colin and his mother, that IT support system is him. Of course, Colin loves his Mom very much, but he loves being her tech support far less. So he built a voice clone of himself she can call instead: an ElevenLabs Instant Voice Clone, reachable through its own Twilio phone line, that searches user manuals via a BraveSearch MCP and calibrates its answers to her specific setup and ability with natural language processing and a Bayesian ideal observer algorithm from cognitive psychology, "built with tender digital love, togetherness, and Finnish hospitality at Sauna AI."
+```
+
+You can watch the original hackathon demo at [this YouTube link](https://www.youtube.com/watch?v=6ZpZhqIFQyg&t=145s).
+
+## Run the App
 
 ```bash
 cp .env.example .env.local   # fill keys
@@ -14,7 +22,7 @@ just url                     # print the running local URL
 
 `just live` installs `cloudflared` via Homebrew if needed (`just live -- --yes` skips the prompt). Quick-tunnel URLs change every session — create/update the assistant on Setup after it starts. If `PUBLIC_BASE_URL` is already a public HTTPS origin in the shell or `.env.local`, `just live` uses that and skips cloudflared.
 
-## Env
+## Environment
 
 Copy [`.env.example`](.env.example) to `.env.local` (gitignored). Names only:
 
