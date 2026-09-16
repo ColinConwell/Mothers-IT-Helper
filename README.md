@@ -4,9 +4,7 @@ Owner dashboard for an agentic family tech-support line (powered by ElevenLabs C
 
 As described in their writeup for the Builders Collective Newsletter (lightly edited by me):
 
-```markdown
-Every family has that one person who becomes free tech support the moment something goes wrong — for Colin and his mother, that IT support system is him. Of course, Colin loves his Mom very much, but he loves being her tech support far less. So he built a voice clone of himself she can call instead: an ElevenLabs Instant Voice Clone, reachable through its own Twilio phone line, that searches user manuals via a BraveSearch MCP and calibrates its answers to her specific setup and ability with natural language processing and a Bayesian ideal observer algorithm from cognitive psychology, "built with tender digital love, togetherness, and Finnish hospitality at Sauna AI."
-```
+> Every family has that one person who becomes free tech support the moment something goes wrong — for Colin and his mother, that IT support system is him. Of course, Colin loves his Mom very much, but he loves being her tech support far less. So he built a voice clone of himself she can call instead: an ElevenLabs Instant Voice Clone, reachable through its own Twilio phone line, that searches user manuals via a BraveSearch MCP and calibrates its answers to her specific setup and ability with natural language processing and a Bayesian ideal observer algorithm from cognitive psychology, "built with tender digital love, togetherness, and Finnish hospitality."
 
 You can watch the original hackathon demo at [this YouTube link](https://www.youtube.com/watch?v=6ZpZhqIFQyg&t=145s).
 
